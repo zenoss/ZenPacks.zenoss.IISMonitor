@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:task" "task.dtd">
+<task id="d34e110">
+  <title>Enable Monitoring</title>
+  <taskbody>
+    <context><p>All IIS servers must have a device entry in an organizer below the
+    <filepath>/Devices/Server/Windows/WMI</filepath> device
+    class. In addition, verify that your <ph conkeyref="names/platform"/> Windows service account has access to the IIS
+    service.</p></context>
+    <steps-informal>
+      <ol>
+      <li>
+        <p>Bind the IIS template to the
+        <codeph outputclass="code">/Devices/Server/Windows/WMI</codeph> class. To do this:</p>
+
+        <ol>
+          <li>
+            <p>Select the device class in the devices hierarchy.</p>
+          </li>
+
+          <li>
+            <p>Click <b>Details</b>.</p>
+          </li>
+
+          <li>
+            <p>Select Device_WMI under Monitoring Templates.</p>
+          </li>
+
+          <li>
+            <p>Select Bind Templates from the Action menu.</p>
+
+            <p>The Bind Templates dialog appears.</p>
+          </li>
+
+          <li>
+            <p>Move IIS (/Server/Windows/WMI) from the Available area to
+            the Selected area, and then click <b>Save</b>.</p>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <p>Navigate to the device or device class in the <ph conkeyref="names/platform"/> interface.</p>
+
+        <ul>
+          <li>
+            <p>If applying changes to a device class:</p>
+
+            <ol>
+              <li>
+                <p>Select the class in the devices hierarchy.</p>
+              </li>
+
+              <li>
+                <p>Click <b>Details</b>.</p>
+              </li>
+
+              <li>
+                <p>Select Configuration Properties.</p>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <p>If applying changes to a device:</p>
+
+            <ol>
+              <li>
+                <p>Click the device in the device list.</p>
+              </li>
+
+              <li>
+                <p>Select Configuration Properties.</p>
+              </li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <p>Verify the credentials for the service account to access the
+        service.</p>
+
+        <table>
+          <title>IIS Configuration Properties</title>
+          <tgroup cols="2">
+            <thead>
+              <row>
+                <entry>Name</entry>
+                <entry>Description</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry><p>zWinUser</p></entry>
+                <entry><p>Windows user with privileges to gather
+                performance information.</p></entry>
+              </row>
+              <row>
+                <entry><p>zWinPassword</p></entry>
+                <entry><p>Password for the above user.</p></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </li>
+
+      <li>
+        <p>Click <uicontrol outputclass="guibutton">Save</uicontrol> to save your changes.</p>
+
+        <p>You will now be able to start collecting the IIS server metrics
+        from this device.</p>
+      </li>
+
+      <li>
+        <p>Navigate to Graphs and you should see some placeholders for
+        graphs. After approximately fifteen minutes you should see the graphs
+        begin to be populated with information.</p>
+      </li>
+    </ol>
+      <note>For more information about user credentials and troubleshooting 
+        WMI connections, see <xref keyref="reference-ZenPacks.zenoss.WindowsMonitor"/>.</note>
+    </steps-informal></taskbody></task>

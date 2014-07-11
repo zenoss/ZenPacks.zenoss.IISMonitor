@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "urn:pubid:zenoss.com:doctypes:dita:dtd:reference" "reference.dtd">
+<reference id="reference_d5s_kmg_tm">
+  <title>(IISMonitor) Microsoft Internet Information Server</title>
+  <shortdesc>The <zenpack>ZenPacks.zenoss.IISMonitor</zenpack> ZenPack uses Windows Perfmon to 
+    collect performance metrics from Microsoft Internet Information Server (IIS).</shortdesc>
+  <refbody>
+    <section>
+      <note>This ZenPack is deprecated; see <xref keyref="reference-ZenPacks.zenoss.Microsoft.Windows"/>.</note>
+      <p>No agent need be installed on IIS servers to collect the following metrics.</p>
+      <ul>
+        <li>
+          <p>Connections Attempts</p>
+        </li>
+        <li>
+          <p>Throughput (Bytes &amp; Files)</p>
+        </li>
+        
+        <li>
+          <p>Requests (GET, HEAD, POST, CGI, ISAPI)</p>
+          <ul>
+            <li>
+              <p>Standard: GET, HEAD, POST, CGI, ISAPI</p>
+            </li>
+            <li>
+              <p>WebDAV: PUT, COPY, MOVE, DELETE, OPTIONS, PROPFIND,
+                PROPPATCH, MKCOL</p>
+            </li>
+            <li>
+              <p>Other: SEARCH, TRACE, LOCK, UNLOCK</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </refbody>
+</reference>
